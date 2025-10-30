@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Explorer with Photos Section</title>
+    <link rel="stylesheet" href="../CSS/destination.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar from First Code -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="../PICS/Logo.jpg" alt="FlyEase Logo" class="logo-img">
+                <div class="logo-text">
+                    <h2>FlyEase</h2>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="destination.html">Destinations & Tours</a></li>
+                <li><a href="BookNow.html">Book Now</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="login.html" class="login-btn">Login/Register</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="panels-container">
+        <div class="panel active" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');">
+            <div class="panel-content">
+                <div class="icon-wrapper">
+                    <i class="fas fa-mountain"></i>
+                </div>
+                <h2 class="panel-title">Mountain Adventures</h2>
+                <p class="panel-subtitle">Explore breathtaking peaks and valleys</p>
+            </div>
+        </div>
+        
+        <div class="panel" style="background-image: url('https://images.unsplash.com/photo-1519904981063-b0cf448d479e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');">
+            <div class="panel-content">
+                <div class="icon-wrapper">
+                    <i class="fas fa-snowflake"></i>
+                </div>
+                <h2 class="panel-title">Winter Wonderland</h2>
+                <p class="panel-subtitle">Experience the magic of snow-covered landscapes</p>
+            </div>
+        </div>
+        
+        <div class="panel" style="background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');">
+            <div class="panel-content">
+                <div class="icon-wrapper">
+                    <i class="fas fa-tree"></i>
+                </div>
+                <h2 class="panel-title">Forest Serenity</h2>
+                <p class="panel-subtitle">Discover tranquil woodland escapes</p>
+            </div>
+        </div>
+        
+        <div class="panel" style="background-image: url('https://images.unsplash.com/photo-1439066615861-d1af74d74000?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');">
+            <div class="panel-content">
+                <div class="icon-wrapper">
+                    <i class="fas fa-water"></i>
+                </div>
+                <h2 class="panel-title">Ocean Dreams</h2>
+                <p class="panel-subtitle">Dive into crystal clear waters</p>
+            </div>
+        </div>
+        
+        <div class="panel" style="background-image: url('https://plus.unsplash.com/premium_photo-1661962428918-6a57ab674e23?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZGVzZXJ0JTIwc3Vuc2V0fGVufDB8fDB8fHww');">
+            <div class="panel-content">
+                <div class="icon-wrapper">
+                    <i class="fas fa-sun"></i>
+                </div>
+                <h2 class="panel-title">Desert Sunsets</h2>
+                <p class="panel-subtitle">Witness stunning golden hour moments</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="packages-section">
+        <div class="container">
+            <div class="section-header">
+                <h1 class="section-title">Popular Tour Packages</h1>
+                <p class="section-subtitle">Discover amazing destinations with our carefully curated travel packages. From exotic beaches to mountain adventures, find your perfect getaway.</p>
+            </div>
+
+            <div class="packages-grid" id="packagesGrid">
+                <!-- Package cards will be generated here -->
+            </div>
+        </div>
+    </div>
+
+    <div class="photos-section">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle-upper">PHOTO GALLERY</p>
+                <h1 class="section-title">Photos From Travelers</h1>
+                <p class="section-subtitle">Imagine a world painted with vibrant hues, captured not by professional lenses, but by the eyes of passionate explorers. Browse through the gallery and let your imagination take flight.</p>
+            </div>
+
+            <div class="photos-grid" id="photosGrid">
+                <!-- Photo cards will be generated here -->
+            </div>
+        </div>
+    </div>
+       <!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <!-- Column 1: Logo & Description -->
+      <div class="footer-section">
+        <div class="footer-logo">
+          <img src="../PICS/Logo1.jpg" class="logo-img" alt="FlyEase Logo">
+          <div class="logo-text">
+            <h3>FlyEase</h3>
+            <span>Explore World</span>
+          </div>
+        </div>
+        <p>Your trusted travel partner for unforgettable adventures around the world.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <!-- Column 2: Quick Links -->
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="destination.html">Destinations&Tours</a></li>
+        <li><a href="BookNow.html">Book Now</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Contact Info -->
+      <div class="footer-section">
+        <h4>Contact Info</h4>
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>SCO 123, Sector 17, Chandigarh, India</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <span>+91 172 4001234</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <span>info@FlyEase.com</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 4: Instagram -->
+      <div class="footer-section">
+        <h4>Instagram Post</h4>
+        <div class="instagram-grid">
+          <a href="#" class="insta-item">
+            <img src="https://media.istockphoto.com/id/518355150/photo/ulun-danu-bratan-temple-at-sunrise-bali-indonesia.jpg?b=1&s=612x612&w=0&k=20&c=i11DAAgjrAOzfcO7voVnz87QSZakahbltd-YzH9jQRQ=" alt="Instagram 1">
+            <div class="overlay"><i class="fab fa-instagram"></i></div>
+          </a>
+          <a href="#" class="insta-item">
+            <img src="https://images.pexels.com/photos/2408962/pexels-photo-2408962.jpeg?cs=srgb&dl=pexels-vinayak-khithani-2408962.jpg&fm=jpg" alt="Instagram 2">
+            <div class="overlay"><i class="fab fa-instagram"></i></div>
+          </a>
+          <a href="#" class="insta-item">
+            <img src="https://images.pexels.com/photos/3601426/pexels-photo-3601426.jpeg?cs=srgb&dl=pexels-asadphoto-3601426.jpg&fm=jpg" alt="Instagram 3">
+            <div class="overlay"><i class="fab fa-instagram"></i></div>
+          </a>
+          <a href="#" class="insta-item">
+            <img src="https://images.pexels.com/photos/176400/pexels-photo-176400.jpeg?cs=srgb&dl=pexels-miroalt-176400.jpg&fm=jpg" alt="Instagram 4">
+            <div class="overlay"><i class="fab fa-instagram"></i></div>
+          </a>
+          <a href="#" class="insta-item">
+            <img src="https://images.pexels.com/photos/6064571/pexels-photo-6064571.jpeg?cs=srgb&dl=pexels-cannontaler-6064571.jpg&fm=jpg" alt="Instagram 5">
+            <div class="overlay"><i class="fab fa-instagram"></i></div>
+          </a>
+          <a href="#" class="insta-item">
+            <img src="https://images.pexels.com/photos/33606674/pexels-photo-33606674.jpeg?cs=srgb&dl=pexels-lloyd-2155163292-33606674.jpg&fm=jpg" alt="Instagram 6">
+            <div class="overlay"><i class="fab fa-instagram"></i></div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p>&copy; 2025 FlyEase Travel Agency. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+<script src="/FlyEase/JS/destination.js"></script>
+</body>
+</html>
