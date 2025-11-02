@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlyEase | Login</title>
+  <link rel="stylesheet" href="../CSS/login.css">
+  <!-- Boxicons -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <!-- Font Awesome for mobile menu -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Main Navbar -->
+  <nav class="main-nav">
+    <div class="nav-container">
+      <div class="logo">
+        <img src="../PICS/Logo.jpg" alt="FlyEase Logo" class="logo-img">
+        <div class="logo-text">
+          <h2>FlyEase</h2>
+        </div>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="destination.html">Destinations & Tours</a></li>
+        <li><a href="BookNow.html">Book Now</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      <!-- Right side buttons -->
+      <div class="nav-actions">
+        <a href="login.html" class="login-btn">Login/Register</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Login/Signup Container -->
+  <div class="container">
+    <div class="form-box login">
+      <form action="#">
+        <h1>Login</h1>
+        <div class="input-box">
+          <input type="text" placeholder="Username" required>
+          <i class='bx bxs-user'></i>
+        </div>
+        <div class="input-box">
+          <input type="password" placeholder="Password" required>
+          <i class='bx bxs-lock-alt'></i>
+        </div>
+        <div class="forgot-link">
+          <a href="">Forgot Password?</a>
+        </div>
+        <button type="submit" class="btn">Login</button>
+        <p>or login with social platforms</p>
+        <div class="social-icons">
+          <a href="#"><i class='bx bxl-google'></i></a>
+          <a href="#"><i class='bx bxl-facebook'></i></a>
+          <a href="#"><i class='bx bxl-github'></i></a>
+          <a href="#"><i class='bx bxl-linkedin'></i></a>
+        </div>
+      </form>
+    </div>
+
+    <div class="form-box register">
+      <form action="#">
+        <h1>Registration</h1>
+        <div class="input-box">
+          <input type="text" placeholder="Username" required>
+          <i class='bx bxs-user'></i>
+        </div>
+        <div class="input-box">
+          <input type="email" placeholder="Email" required>
+          <i class='bx bxs-envelope'></i>
+        </div>
+        <div class="input-box">
+          <input type="password" placeholder="Password" required>
+          <i class='bx bxs-lock-alt'></i>
+        </div>
+        <button type="submit" class="btn">Register</button>
+        <p>or register with social platforms</p>
+        <div class="social-icons">
+          <a href="#"><i class='bx bxl-google'></i></a>
+          <a href="#"><i class='bx bxl-facebook'></i></a>
+          <a href="#"><i class='bx bxl-github'></i></a>
+          <a href="#"><i class='bx bxl-linkedin'></i></a>
+        </div>
+      </form>
+    </div>
+
+    <div class="toggle-box">
+      <div class="toggle-panel toggle-left">
+  <h1>Hello, Welcome!</h1>
+  <p style="color: black;">Don't have an account?</p>
+  <button class="btn toggle-register-btn" style="color: black; border-color: black;">Register</button>
+</div>
+
+      <div class="toggle-panel toggle-right">
+  <h1>Welcome Back!</h1>
+  <p style="color: black;">Already have an account?</p>
+  <button class="btn toggle-login-btn " style="color: black; border-color: black;">Login</button>
+</div>
+    </div>
+  </div>
+
+  <script>
+// Toggle between login & register
+const container = document.querySelector('.container');
+const toggleRegisterBtn = document.querySelector('.toggle-register-btn');
+const toggleLoginBtn = document.querySelector('.toggle-login-btn');
+
+const loginForm = document.querySelector('.form-box.login form');
+const registerForm = document.querySelector('.form-box.register form');
+
+toggleRegisterBtn.addEventListener('click', () => container.classList.add('active'));
+toggleLoginBtn.addEventListener('click', () => container.classList.remove('active'));
+
+// Handle Login form
+loginForm.addEventListener('submit', (e) => {
+  e.preventDefault(); 
+  const username = loginForm.querySelector('input[type="text"]').value;
+  const password = loginForm.querySelector('input[type="password"]').value;
+
+  if (username && password) {
+    alert(`Login successful!\nUsername: ${username}`);
+    loginForm.reset();
+  } else {
+    alert("Please fill in all fields to login.");
+  }
+});
+
+// Handle Register form
+registerForm.addEventListener('submit', (e) => {
+  e.preventDefault(); 
+  const username = registerForm.querySelector('input[type="text"]').value;
+  const email = registerForm.querySelector('input[type="email"]').value;
+  const password = registerForm.querySelector('input[type="password"]').value;
+
+  if (username && email && password) {
+    alert(`Registration successful!\nWelcome, ${username}`);
+    registerForm.reset();
+  } else {
+    alert("Please fill in all fields to register.");
+  }
+});
+
+  </script>
+</body>
+</html>

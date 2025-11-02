@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trip Booking Page - FlyEase</title>
+  <link rel="stylesheet" href="../CSS/Booknow.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- Main Navbar -->
+<nav class="main-nav">
+  <div class="container nav-container">
+    <!-- Logo -->
+    <div class="logo">
+      <img src="../PICS/logo.jpg" alt="FlyEase Logo" class="logo-img">
+      <h2 class="logo-text">FlyEase</h2>
+    </div>
+
+    <!-- Navigation Menu -->
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="destination.html">Destinations & Tours</a></li>
+      <li><a href="BookNow.html" class="active">Book Now</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+
+    <!-- Right side button -->
+    <div class="nav-actions">
+      <a href="login.html" class="login-btn">Login/Register</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Booking Form Section -->
+<div class="book-container">
+  <!-- Left side (form) -->
+  <div class="left">
+    <h2>Book Your Trip</h2>
+    <form id="bookingForm">
+      <input type="text" id="name" placeholder="Full Name" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="tel" id="phone" placeholder="Phone Number" required>
+
+      <select id="destination" required>
+        <option value="" disabled selected>Select Destination</option>
+        <option>Bali</option>
+        <option>Maldives</option>
+        <option>Thailand</option>
+        <option>Dubai</option>
+        <option>Switzerland</option>
+        <option>Darjeeling</option>
+      </select>
+
+      <input type="number" id="travelers" placeholder="Number of Travelers" min="1" required>
+
+      <div class="date-group">
+        <div>
+          <label for="date">Travel Date:</label>
+          <input type="date" id="date" required>
+        </div>
+        <div>
+          <label for="return">Return Date:</label>
+          <input type="date" id="return" required>
+        </div>
+      </div>
+
+      <button type="submit">Book Now</button>
+    </form>
+    <p id="confirmation"></p>
+  </div>
+
+  <!-- Right side (video) -->
+  <div class="right">
+    <video autoplay muted loop>
+      <source src="../PICS/BookNow.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
+
+<!-- Booking Confirmation Script -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Set minimum dates to today
+    const today = new Date();
+    const formattedDate = today.toISOString().split('T')[0];
+    
+    document.getElementById('date').setAttribute('min', formattedDate);
+    document.getElementById('return').setAttribute('min', formattedDate);
+    
+    // Add event listeners for date validation
+    const dateInput = document.getElementById('date');
+    const returnInput = document.getElementById('return');
+    const dateError = document.getElementById('date-error');
+    const returnError = document.getElementById('return-error');
+    
+    dateInput.addEventListener('change', function() {
+      // Update return date min value when travel date changes
+      returnInput.min = this.value;
+      
+      // Validate if return date is still valid
+      if (returnInput.value && returnInput.value < this.value) {
+        returnError.style.display = 'block';
+        returnInput.setCustomValidity('Return date must be after travel date');
+      } else {
+        returnError.style.display = 'none';
+        returnInput.setCustomValidity('');
+      }
+    });
+    
+    returnInput.addEventListener('change', function() {
+      if (this.value < dateInput.value) {
+        returnError.style.display = 'block';
+        this.setCustomValidity('Return date must be after travel date');
+      } else {
+        returnError.style.display = 'none';
+        this.setCustomValidity('');
+      }
+    });
+    
+    // Form submission handler
+    document.getElementById("bookingForm").addEventListener("submit", function(e) {
+      // Additional validation before submission
+      if (dateInput.value < formattedDate) {
+        e.preventDefault();
+        dateError.style.display = 'block';
+        dateInput.setCustomValidity('Please select a future date');
+        return;
+      }
+      
+      if (returnInput.value < dateInput.value) {
+        e.preventDefault();
+        returnError.style.display = 'block';
+        returnInput.setCustomValidity('Return date must be after travel date');
+        return;
+      }
+      
+      e.preventDefault(); // Prevent form reload
+
+      const name = document.getElementById("name").value;
+      const destination = document.getElementById("destination").value;
+      const date = document.getElementById("date").value;
+
+      // Show confirmation
+      document.getElementById("confirmation").innerText = 
+        `Thank you, ${name}! Your trip to ${destination} on ${date} has been booked.`;
+
+      // Reset form
+      document.getElementById("bookingForm").reset();
+      
+      // Reset min dates
+      document.getElementById('date').setAttribute('min', formattedDate);
+      document.getElementById('return').setAttribute('min', formattedDate);
+    });
+  });
+</script>
+
+</body>
+</html>
